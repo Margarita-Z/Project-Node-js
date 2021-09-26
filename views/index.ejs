@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <p>With <%= name %></p>
+
+    <table border="1">
+      <thead>
+        <td>
+          FirstName
+        </td>
+        <td>
+          LastName
+        </td>
+        <td>
+          EMBG
+        </td>
+        <td>
+          Gender
+        </td>
+      </thead>
+      </table>
+      <tbody>
+        <% employees.forEach(employe => { %>
+          <tr>
+            <td>
+              <%= employe.FirstName %>
+            </td>
+            <td>
+              <%= employe.LastName %>
+            </td>
+            <td>
+              <%= employe.EMBG %>
+            </td>
+            <td>
+              <%= employe.Gender %>
+            </td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+    <form action="/employees" method="post">
+      FirstName <input type="text" name="FirstName" /><br/>
+      LastName <input type="text" name="LastName" /><br/>
+      EMBG <input type="number" name="EMBG" /><br/>
+      Gender: <label>M</label><input type="radio" name="Gender" value="M" />
+        <label>F</label><input type="radio" name="Gender" value=""><br/>
+      <button type="submit">Create</button>
+    </form>
+  </body>
+</html>

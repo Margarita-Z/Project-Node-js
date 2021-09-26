@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cars</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    
+    <table border="1">
+      <thead>
+        <td>
+          Model
+        </td>
+        <td>
+          Serija
+        </td>
+        <td>
+          Godina
+        </td>
+      </thead>
+      </table>
+      <tbody>
+        <% cars.forEach(car => { %>
+          <tr>
+            <td>
+              <%= car.Model %>
+            </td>
+            <td>
+              <%= car.Serija %>
+            </td>
+            <td>
+              <%= car.Godina %>
+            </td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+    <form action="/cars" method="post">
+      Model <input type="text" name="Model" /><br/>
+      Serija <input type="text" name="Serija" /><br/>
+      Godina <input type="number" name="Godina" /><br/>
+      <button type="submit">Create</button>
+    </form>
+  </body>
+</html>
